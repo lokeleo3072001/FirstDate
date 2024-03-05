@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="./style/style.css" />
+        <link rel="stylesheet" href="./style/audio.css" />
+        <link rel="stylesheet" href="./style/heart.css" />
+    </head>
+    <body>
+        <div class="audio-circle">
+            <div id="audio-player" class="audio-player" style="display: block">
+                <div
+                    onclick="playPause();"
+                    class="audio-player-secondary"
+                ></div>
+                <div class="playerIcon">
+                    <span id="playerVolumeOff">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="25"
+                            height="27"
+                            fill="#fff"
+                            class="bi bi-volume-mute-fill"
+                            viewBox="0 0 16 16"
+                        >
+                            <path
+                                d="M6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06zm7.137 2.096a.5.5 0 0 1 0 .708L12.207 8l1.647 1.646a.5.5 0 0 1-.708.708L11.5 8.707l-1.646 1.647a.5.5 0 0 1-.708-.708L10.793 8 9.146 6.354a.5.5 0 1 1 .708-.708L11.5 7.293l1.646-1.647a.5.5 0 0 1 .708 0z"
+                            ></path>
+                        </svg>
+                    </span>
+                    <span style="display: none" id="playerVolumeOn">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="25"
+                            height="27"
+                            fill="#fff"
+                            class="bi bi-volume-up-fill"
+                            viewBox="0 0 16 16"
+                        >
+                            <path
+                                d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"
+                            ></path>
+                            <path
+                                d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"
+                            ></path>
+                            <path
+                                d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"
+                            ></path>
+                        </svg>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <audio
+            id="myAudio"
+            src="./music/music.mp3"
+            controls="controls"
+            style="display: none"
+            loop
+        ></audio>
+        <section class="slider-pages">
+            <article
+                class="js-scrolling__page js-scrolling__page-1 js-scrolling--active"
+            >
+                <div class="slider-page slider-page--left">
+                    <div class="slider-page--skew">
+                        <div class="slider-page__content"></div>
+                    </div>
+                </div>
+
+                <div class="slider-page slider-page--right">
+                    <div class="slider-page--skew">
+                        <div class="slider-page__content">
+                            <h1
+                                class="slider-page__title slider-page__title--big"
+                            >
+                                Đơn ứng tuyển
+                            </h1>
+                            <h2 class="slider-page__title">Vị trí: Người đồng hành </h2>
+                            <h3 class="slider-page__title">Thời gian: 08/03/2024 </h3>
+                            <p class="slider-page__description">
+                                Please scroll down or press the down arrow on
+                                your keyboard
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="js-scrolling__page js-scrolling__page-2">
+                <div class="slider-page slider-page--left">
+                    <div class="slider-page--skew">
+                        <div class="slider-page__content">
+                            <h1 class="slider-page__title">Now you are here</h1>
+                            <p class="slider-page__description">
+                                Please continue scrolling
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slider-page slider-page--right">
+                    <div class="slider-page--skew">
+                        <div class="slider-page__content"></div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="js-scrolling__page js-scrolling__page-3">
+                <div class="slider-page slider-page--left">
+                    <div class="slider-page--skew">
+                        <div class="slider-page__content"></div>
+                    </div>
+                </div>
+
+                <div class="slider-page slider-page--right">
+                    <div class="slider-page--skew">
+                        <div class="slider-page__content">
+                            <h1 class="slider-page__title">
+                                Final is just the beginning
+                            </h1>
+                            <p class="slider-page__description">
+                                Feel free to follow me on
+                                <a
+                                    class="slider-page__link"
+                                    href="https://twitter.com/WispProxy"
+                                    target="_blank"
+                                    >Twitter</a
+                                >
+                                and check of
+                                <a
+                                    class="slider-page__link"
+                                    href="https://codepen.io/WispProxy/pens/public"
+                                    target="_blank"
+                                    >my other works</a
+                                >
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <script src="./dist/index.js"></script>
+        <script src="./dist/audio.js"></script>
+    </body>
+</html>
