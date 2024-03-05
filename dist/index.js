@@ -233,13 +233,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 var view = document.getElementById("view");
 var myView = document.getElementById("my-view");
-var view = document.getElementById("result");
-var myView = document.getElementById("firstResult");
+var result = document.getElementById("result");
+var firstResult = document.getElementById("firstResult");
 window.onload = function () {
     const myCookie = getCookie("result");
     if (myCookie) {
-        view.style.display = "block";
-        myView.style.display = "none";
+        result.style.display = "block";
+        firstResult.style.display = "none";
     }
     if (window.innerWidth < window.innerHeight || window.innerWidth < 600) {
         view.style.display = "block";
