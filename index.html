@@ -133,7 +133,33 @@
                     </div>
                 </div>
 
-                <div class="slider-page slider-page--right">
+                <div style="display: none;" id="result" class="slider-page slider-page--right">
+                    <div class="slider-page--skew">
+                        <div class="slider-page__content">
+                            <h1
+                                class="slider-page__title slider-page__title--big"
+                            >
+                                Vậy là đồng ý rồi nha 🙄🙄🙄
+                            </h1>
+                            <h2
+                                class="slider-page__title slider-page__title--big"
+                            >
+                                Em chưa có xe đâu mượn tạm xe chị 1 hôm nha
+                                🙄🙄🙄
+                            </h2>
+                            <h2
+                                class="slider-page__title slider-page__title--big"
+                            >
+                                Chúc chị có chuyến đi vui vẻ với em 🙄🙄🙄
+                            </h2>
+                            <p class="slider-page__description">
+                                Please continue scrolling
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="firstResult" class="slider-page slider-page--right">
                     <div class="slider-page--skew">
                         <div class="slider-page__content">
                             <h1
@@ -143,8 +169,18 @@
                                 🙄🙄🙄
                             </h1>
                             <div class="btn-container">
-                                <button class="btn-custom yes">Yes</button>
-                                <button class="btn-custom btn-no">No</button>
+                                <button
+                                    onclick="acceptDate()"
+                                    class="btn-custom yes"
+                                >
+                                    Yes
+                                </button>
+                                <button
+                                    onclick="acceptDate()"
+                                    class="btn-custom btn-no"
+                                >
+                                    No
+                                </button>
                             </div>
                             <p class="slider-page__description">
                                 Please continue scrolling
@@ -162,11 +198,15 @@
                                 Em bí ý tưởng rồi -.-
                             </h2>
                             <h2 class="slider-page__title">
-                                Mọi ý kiến đóng góp vui lòng liên hệ đến: dtmg307@gmail.com
+                                Mọi ý kiến đóng góp vui lòng liên hệ đến:
+                                dtmg307@gmail.com
                             </h2>
 
                             <p class="slider-page__description">
-                                Hoặc là <a href="https://www.facebook.com/lokeleo3007/" >LokeLeo</a>
+                                Hoặc là
+                                <a href="https://www.facebook.com/lokeleo3007/"
+                                    >LokeLeo</a
+                                >
                             </p>
                         </div>
                     </div>
@@ -181,13 +221,15 @@
         </section>
         <div style="display: none" id="view" class="container">
             <div class="content">
-              <h1 class="error-text">Vui lòng xoay ngang màn hình để xem nội dung</h1>
-              <p class="error-text">
-                Hãy đảm bảo thiết bị của bạn đang ở chế độ ngang để trải nghiệm tốt
-                nhất!
-              </p>
+                <h1 class="error-text">
+                    Vui lòng xoay ngang màn hình để xem nội dung
+                </h1>
+                <p class="error-text">
+                    Hãy đảm bảo thiết bị của bạn đang ở chế độ ngang để trải
+                    nghiệm tốt nhất!
+                </p>
             </div>
-          </div>
+        </div>
         <script src="./dist/index.js"></script>
         <script src="./dist/audio.js"></script>
     </body>

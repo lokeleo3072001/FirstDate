@@ -198,6 +198,22 @@ const readyFunction = () => {
     })();
 };
 
+function getCookie(name) {
+    const cookieName = name + "=";
+    const decodedCookie = decodeURIComponent(document.cookie);
+    const cookieArray = decodedCookie.split(";");
+    for (let i = 0; i < cookieArray.length; i++) {
+        let cookie = cookieArray[i];
+        while (cookie.charAt(0) == " ") {
+            cookie = cookie.substring(1);
+        }
+        if (cookie.indexOf(cookieName) == 0) {
+            return cookie.substring(cookieName.length, cookie.length);
+        }
+    }
+    return "";
+}
+
 /**
  *  Launcher
  */
@@ -217,7 +233,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
 var view = document.getElementById("view");
 var myView = document.getElementById("my-view");
+var view = document.getElementById("result");
+var myView = document.getElementById("firstResult");
 window.onload = function () {
+    const myCookie = getCookie("result");
+    if (myCookie) {
+        view.style.display = "block";
+        myView.style.display = "none";
+    }
     if (window.innerWidth < window.innerHeight || window.innerWidth < 600) {
         view.style.display = "block";
         myView.style.display = "none";
@@ -235,3 +258,9 @@ window.addEventListener("resize", function (event) {
         myView.style.display = "block";
     }
 });
+
+function acceptDate() {
+    view.style.display = "block";
+    myView.style.display = "none";
+    document.cookie = "result=1;";
+}
