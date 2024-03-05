@@ -214,3 +214,24 @@ document.addEventListener("DOMContentLoaded", function () {
         buttonNO.textContent = "No";
     });
 });
+
+var view = document.getElementById("view");
+var myView = document.getElementById("my-view");
+window.onload = function () {
+    if (window.innerWidth < window.innerHeight || window.innerWidth < 600) {
+        view.style.display = "block";
+        myView.style.display = "none";
+    } else {
+        view.style.display = "none";
+        myView.style.display = "block";
+    }
+};
+window.addEventListener("resize", function (event) {
+    if (window.innerWidth < window.innerHeight || window.innerWidth < 600) {
+        view.style.display = "block";
+        myView.style.display = "none";
+    } else {
+        view.style.display = "none";
+        myView.style.display = "block";
+    }
+});
