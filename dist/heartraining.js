@@ -5,9 +5,8 @@ function createHeart() {
     heart.style.left = Math.random() * 100 + "vw";
     heart.style.animationDuration = Math.random() * 2 + 7 + "s";
 
-    // Tạo thẻ <img> và đặt đường dẫn của ảnh động
     const img = document.createElement("img");
-    img.src = "../image/heart-beating.gif";
+    img.src = "../image/heartbeating.gif";
 
     const scaleRatio = Math.random() * (0.15 - 0.05) + 0.05;
     img.style.transform = "scale(" + scaleRatio + ")";
