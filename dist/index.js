@@ -93,6 +93,7 @@ const readyFunction = () => {
         _scrollingDown,
         _mouseWheelEvent,
         _keyDownEvent,
+        _handleTouch,
         init;
 
     /**
@@ -174,7 +175,7 @@ const readyFunction = () => {
      *  @param e
      *  @private
      */
-    _keyDownEvent = (e) => {
+    _keyDownEvent = () => {
         if (scrollingIsActive) {
             return;
         }
@@ -186,6 +187,24 @@ const readyFunction = () => {
         }
     };
 
+    _handleTouch = (e) => {
+        e.preventDefault(); // Ngăn chặn hành vi mặc định của trình duyệt
+        let touchStartX = e.touches[0].clientX;
+        let touchEndX;
+
+        document.addEventListener("touchmove", function (e) {
+            touchEndX = e.touches[0].clientX;
+        });
+
+        document.addEventListener("touchend", function () {
+            if (touchStartX - touchEndX > 20) {
+                _scrollingDown();
+            } else if (touchStartX - touchEndX < -20) {
+                _scrollingUp();
+            }
+        });
+    };
+
     /**
      *  @function init
      *
@@ -195,8 +214,17 @@ const readyFunction = () => {
         document.addEventListener("mousewheel", _mouseWheelEvent, false);
         document.addEventListener("DOMMouseScroll", _mouseWheelEvent, false);
         document.addEventListener("keydown", _keyDownEvent, false);
+        document.addEventListener("touchstart", _handleTouch, false);
     })();
 };
+
+function handleTouchStart(event) {
+    touchStartX = event.touches[0].clientX;
+}
+
+function handleTouchMove(event) {
+    touchEndX = event.touches[0].clientX;
+}
 
 function getCookie(name) {
     const cookieName = name + "=";
