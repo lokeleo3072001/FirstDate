@@ -6,7 +6,7 @@ function createHeart() {
     heart.style.animationDuration = Math.random() * 2 + 7 + "s";
 
     const img = document.createElement("img");
-    img.src = "../image/heartbeating.gif";
+    img.src = "./dist/heartbeating.gif";
 
     const scaleRatio = Math.random() * (0.15 - 0.05) + 0.05;
     img.style.transform = "scale(" + scaleRatio + ")";
