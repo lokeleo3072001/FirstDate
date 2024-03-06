@@ -263,22 +263,31 @@ var view = document.getElementById("view");
 var myView = document.getElementById("my-view");
 var result = document.getElementById("result");
 var firstResult = document.getElementById("firstResult");
+
 window.onload = function () {
     const myCookie = getCookie("result");
     if (myCookie) {
         result.style.display = "block";
         firstResult.style.display = "none";
     }
-    if (window.innerWidth < window.innerHeight || window.innerWidth < 600) {
+    if (
+        window.innerWidth < window.innerHeight ||
+        (window.innerWidth < 600 && window.innerWidth < window.innerHeight)
+    ) {
         view.style.display = "block";
         myView.style.display = "none";
+        console.log(1);
     } else {
+        console.log(2);
         view.style.display = "none";
         myView.style.display = "block";
     }
 };
 window.addEventListener("resize", function (event) {
-    if (window.innerWidth < window.innerHeight || window.innerWidth < 600) {
+    if (
+        window.innerWidth < window.innerHeight ||
+        (window.innerWidth < 600 && window.innerWidth < window.innerHeight)
+    ) {
         view.style.display = "block";
         myView.style.display = "none";
     } else {
@@ -288,7 +297,7 @@ window.addEventListener("resize", function (event) {
 });
 
 function acceptDate() {
-    view.style.display = "block";
-    myView.style.display = "none";
+    result.style.display = "block";
+    firstResult.style.display = "none";
     document.cookie = "result=1;";
 }
